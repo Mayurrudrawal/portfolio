@@ -1,25 +1,24 @@
 {
-  "name": "portfolio-starter",
+  "name": "portfolio",
   "type": "module",
   "version": "1.0.0",
   "private": false,
-  "description": "A minimal, professional portfolio starter for Astro — TypeScript, Tailwind CSS v4, Content Collections, dark mode, and full SEO, with no unnecessary dependencies.",
+  "description": "Personal portfolio of Mayur — AI/ML & full-stack developer.",
   "keywords": [
     "astro",
-    "astro-theme",
-    "astro-template",
     "portfolio",
+    "ai-ml",
+    "full-stack",
     "tailwindcss",
-    "typescript",
-    "starter"
+    "typescript"
   ],
   "license": "MIT",
-  "author": "Bracozs",
+  "author": "Mayur",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/portfolio-starter"
+    "url": "https://github.com/Mayurrudrawal/portfolio"
   },
-  "homepage": "https://github.com/your-username/portfolio-starter",
+  "homepage": "https://github.com/Mayurrudrawal/portfolio",
   "engines": {
     "node": ">=22.0.0"
   },
@@ -33,7 +32,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.3.3"
+    "astro": "^7.3.8"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

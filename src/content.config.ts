@@ -16,10 +16,14 @@ const work = defineCollection({
       tags: z.array(z.string()).default([]),
       cover: image().optional(),
       url: z.url().optional(),
+      demo: z.url().optional(),
+      paper: z.url().optional(),
       repo: z.url().optional(),
+      highlight: z.string().optional(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
     }),
 });
+
 
 export const collections = { work };

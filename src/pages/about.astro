@@ -3,7 +3,17 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Button from '@/components/Button.astro';
 import { SITE } from '@/site.config';
 
-const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js'];
+const tools = [
+  'Python',
+  'PyTorch',
+  'scikit-learn',
+  'TypeScript',
+  'Astro',
+  'React',
+  'Flutter',
+  'Node.js',
+  'SQL',
+];
 ---
 
 <BaseLayout title="About" description={`A bit about ${SITE.name} and how they work.`}>
@@ -16,18 +26,18 @@ const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js
 
     <div class="prose prose-sm sm:prose-base mt-8 max-w-xl">
       <p>
-        I start most projects by trying to find the smallest version of the problem — the one
-        screen, one flow, or one fix that actually matters — and build that first, properly, before
-        expanding outward.
+        I build full-stack web applications and machine learning systems from the ground up,
+        focusing on practical architecture, high reliability, and clean interfaces.
       </p>
       <p>
-        That usually means fewer features than a kickoff deck promises, and more attention to the
-        parts people interact with constantly: load times, empty states, error messages, the things
-        that quietly decide whether software feels good to use.
+        Currently pursuing B.Tech in Computer Science (Data Science) at IPS Academy, Indore. My work
+        spans developing real-time safety monitoring solutions as a Smart India Hackathon 2025
+        National Finalist (GIRAKSHA) to publishing Scopus-indexed research on multi-disease prediction
+        models.
       </p>
       <p>
-        Outside of client and product work, I maintain a couple of small open-source tools and write
-        occasional notes on what I learn building them.
+        Whether architecting ML inference pipelines or shipping accessible frontend experiences, I
+        prioritize modular systems, measurable accuracy, and performance over buzzwords.
       </p>
     </div>
 
@@ -45,5 +55,6 @@ const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js
     </div>
 
     <Button href={`mailto:${SITE.email}`} class="mt-10">Get in touch</Button>
+
   </section>
 </BaseLayout>

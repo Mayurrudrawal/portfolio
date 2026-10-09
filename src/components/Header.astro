@@ -30,11 +30,19 @@ const currentPath = Astro.url.pathname;
         })
       }
       <a
+        href="/resume.pdf"
+        download
+        class="text-ink-soft hover:text-ink font-mono text-xs tracking-wide uppercase transition-colors"
+      >
+        Resume
+      </a>
+      <a
         href="/#contact"
         class="text-ink-soft hover:text-ink hidden font-mono text-xs tracking-wide uppercase transition-colors sm:inline"
       >
         Contact
       </a>
+
       <ThemeToggle />
     </nav>
   </div>

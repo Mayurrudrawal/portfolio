@@ -1,5 +1,6 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Button from '@/components/Button.astro';
 import { formatDate } from '@/utils/formatDate';
@@ -17,13 +18,13 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, summary, role, date, tags, url, repo } = entry.data;
+const { title, summary, role, date, tags, url, repo, demo, paper, highlight, cover } = entry.data;
 const { Content } = await render(entry);
 
 const formattedDate = formatDate(date);
 ---
 
-<BaseLayout title={title} description={summary}>
+<BaseLayout title={title} description={summary} image={cover?.src}>
   <article class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
     <a href="/work" class="text-ink-soft hover:text-signal font-mono text-xs transition-colors">
       ← All work
@@ -32,6 +33,14 @@ const formattedDate = formatDate(date);
     <h1 class="font-display text-ink mt-6 max-w-2xl text-3xl font-medium sm:text-4xl">
       {title}
     </h1>
+
+    {
+      highlight && (
+        <p class="text-signal font-mono text-xs mt-2 font-medium tracking-wide">
+          {highlight}
+        </p>
+      )
+    }
 
     <dl
       class="border-line text-ink-soft mt-6 flex flex-wrap gap-x-8 gap-y-2 border-y py-4 font-mono text-xs"
@@ -48,15 +57,51 @@ const formattedDate = formatDate(date);
       }
     </dl>
 
+    {
+      cover && (
+        <div class="border-line mt-8 overflow-hidden rounded-lg border">
+          <Image src={cover} alt={title} class="w-full object-cover" />
+        </div>
+      )
+    }
+
     <div class="prose prose-sm sm:prose-base mt-10 max-w-2xl">
       <Content />
     </div>
 
+    {
+      demo && (
+        <div class="border-line mt-10 overflow-hidden rounded-lg border">
+          <iframe
+            src={demo}
+            title={`${title} live demo`}
+            class="h-[600px] w-full border-0"
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin allow-popups"
+          />
+        </div>
+      )
+    }
+
     <div class="mt-10 flex flex-wrap gap-3">
       {
-        url && (
+        demo && (
+          <Button href={demo} variant="solid">
+            Live demo →
+          </Button>
+        )
+      }
+      {
+        url && !demo && (
           <Button href={url} variant="solid">
             Visit live →
+          </Button>
+        )
+      }
+      {
+        paper && (
+          <Button href={paper} variant="ghost">
+            Read paper
           </Button>
         )
       }
@@ -70,3 +115,4 @@ const formattedDate = formatDate(date);
     </div>
   </article>
 </BaseLayout>
+
